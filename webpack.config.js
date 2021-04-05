@@ -2,6 +2,7 @@ const path = require('path');
 module.exports = {
     entry: [
         './helpers/helper-times.js',
+
         './app/static-assets/js/BMBF.js',
         './app/static-assets/js/BMBF.tracking.js',
         './app/static-assets/js/BMBF.foundation.js',
@@ -14,6 +15,12 @@ module.exports = {
         './app/static-assets/js/BMBF.profile.js',
         './app/static-assets/js/BMBF.movie.js',
         './app/static-assets/js/BMBF.movienight.js',
+
+        './app/static-assets/js/vendor/foundation/foundation.magellan.js',
+        './app/static-assets/js/vendor/foundation/foundation.orbit.js',
+        './app/static-assets/js/vendor/ie/redirect.js',
+        './app/static-assets/js/vendor/jquery/jquery.fittext.custom.js',
+
     ],
     output: {
         filename: 'main.js',
