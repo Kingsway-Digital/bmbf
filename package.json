@@ -3,7 +3,7 @@
     "version": "0.0.0",
     "keywords": [],
     "author": "",
-    "license": "UNLICENSED",
+    "private": true,
     "homepage": "https://github.com/Kingsway-Digital/bmbf#readme",
     "repository": {
         "type": "git",
