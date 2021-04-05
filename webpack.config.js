@@ -25,9 +25,6 @@ module.exports = {
         './app/static-assets/js/vendor/ie/redirect.js',
         './app/static-assets/js/vendor/jquery/jquery.fittext.custom.js',
 
-        // Helpers
-        './helpers/helper-times.js',
-
         // SASS
         './app/static-assets/css/components.scss',
         './app/static-assets/css/core.scss',
