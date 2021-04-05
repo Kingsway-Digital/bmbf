@@ -1,9 +1,0 @@
-{
-  "name": "home",
-  "private": true,
-  "dependencies": {
-    "foundation": "zurb/bower-foundation#~5.4.6",
-    "NaturalLanguageForm": "https://github.com/decapyre/NaturalLanguageForm.git"
-  },
-  "devDependencies": {}
-}
