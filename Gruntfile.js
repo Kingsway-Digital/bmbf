@@ -10,10 +10,13 @@
 module.exports = function (grunt) {
 
     // Load grunt tasks automatically
-    require('load-grunt-tasks')(grunt, {pattern: ['grunt-*', 'assemble']});
+    require('load-grunt-tasks')(grunt);
 
     // Time how long tasks take. Can help when optimizing build times
     require('time-grunt')(grunt);
+
+    const sass = require('node-sass');
+    const serveStatic = require('serve-static');
 
     // Configurable paths
     var config = {
@@ -89,9 +92,9 @@ module.exports = function (grunt) {
                 options: {
                     middleware: function(connect) {
                         return [
-                            connect.static('.tmp'),
-                            connect().use('/bower_components', connect.static('./bower_components')),
-                            connect.static(config.app)
+                            serveStatic('.tmp'),
+                            connect().use('/bower_components', serveStatic('./bower_components')),
+                            serveStatic(config.app)
                         ];
                     }
                 }
@@ -162,7 +165,9 @@ module.exports = function (grunt) {
             options: {
                 loadPath: [
                     'bower_components'
-                ]
+                ],
+                implementation: sass,
+                sourceMap: true
             },
             dist: {
                 files: [{
