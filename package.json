@@ -13,7 +13,8 @@
         "url": "https://github.com/Kingsway-Digital/bmbf/issues"
     },
     "scripts": {
-        "build": "webpack"
+        "clean": "rimraf dist",
+        "build": "rimraf dist && webpack"
     },
     "devDependencies": {
         "@babel/core": "^7.13.14",
@@ -29,7 +30,10 @@
         "terser-webpack-plugin": "^5.1.1",
         "url-loader": "^4.1.1",
         "webpack": "^5.30.0",
-        "webpack-cli": "^4.6.0"
+        "webpack-cli": "^4.6.0",
+        "webpack-remove-empty-scripts": "^0.7.1"
     },
-    "dependencies": {}
+    "dependencies": {
+        "rimraf": "^3.0.2"
+    }
 }
