@@ -55,7 +55,7 @@
 // $rem-base: 16px;
 
 // Allows the use of rem-calc() or lower-bound() in your settings
-@import "../../../../bower_components/foundation/scss/foundation/functions";
+@import '~foundation-sites/scss/foundation/functions';
 //@import "foundation/functions";
 
 // The default font-size is set to 100% of the browser style sheet (usually 16px)
@@ -1369,7 +1369,7 @@ $topbar-bg-color: $white;
 $topbar-bg: $topbar-bg-color;
 
 // Height and margin
-$topbar-height: 45px;
+$topbar-height: rem-calc(45);
 // $topbar-margin-bottom: 0;
 
 // Controlling the styles for the title in the top bar
@@ -1402,7 +1402,7 @@ $topbar-link-bg-active-hover: $primary-color;//scale-color($primary-color, $ligh
 // $topbar-link-text-transform: none;
 $topbar-link-padding: $topbar-height / 4;
 // $topbar-back-link-size: $h5-font-size;
-$topbar-link-dropdown-padding: 20px;
+$topbar-link-dropdown-padding: rem-calc(20);
 
 // $topbar-button-font-size: 0.75rem;
 // $topbar-button-top: 7px;

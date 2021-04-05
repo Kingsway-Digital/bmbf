@@ -1,4 +1,8 @@
 const path = require('path');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
+
 module.exports = {
     entry: [
         // BMBF code
@@ -23,25 +27,50 @@ module.exports = {
 
         // Helpers
         './helpers/helper-times.js',
+
+        // SASS
+        './app/static-assets/css/components.scss',
+        './app/static-assets/css/core.scss',
+        './app/static-assets/css/fonts.scss'
     ],
     output: {
         filename: 'main.js',
         path: path.resolve(__dirname, 'dist'),
     },
     mode: 'production',
+    plugins: [new MiniCssExtractPlugin()],
     module: {
         rules: [
             {
+                test: /\.js$/,
+                exclude: /(node_modules|bower_components)/,
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: ['@babel/preset-env'],
+                    },
+                },
+            },
+            {
+                test: /\.(svg|gif|jpg|jpeg|png|eot|woff|ttf)$/,
+                loader: 'url-loader'
+            },
+            {
                 test: /\.s[ac]ss$/i,
                 use: [
-                    // Creates `style` nodes from JS strings
-                    'style-loader',
-                    // Translates CSS into CommonJS
+                    MiniCssExtractPlugin.loader,
                     'css-loader',
-                    // Compiles Sass to CSS
                     'sass-loader',
                 ],
             },
+        ],
+    },
+    optimization: {
+        minimizer: [
+            new TerserPlugin({
+                extractComments: false,
+            }),
+            new OptimizeCssAssetsPlugin(),
         ],
     },
 };
