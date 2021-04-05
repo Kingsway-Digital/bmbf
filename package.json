@@ -3,7 +3,7 @@
     "version": "0.0.0",
     "keywords": [],
     "author": "",
-    "license": "0BSD",
+    "license": "UNLICENSED",
     "homepage": "https://github.com/Kingsway-Digital/bmbf#readme",
     "repository": {
         "type": "git",
@@ -12,7 +12,13 @@
     "bugs": {
         "url": "https://github.com/Kingsway-Digital/bmbf/issues"
     },
+    "scripts": {
+        "build": "webpack"
+    },
     "devDependencies": {
-        "foundation-sites": "5.5.3"
-    }
+        "foundation-sites": "5.5.3",
+        "webpack": "^5.30.0",
+        "webpack-cli": "^4.6.0"
+    },
+    "dependencies": {}
 }
